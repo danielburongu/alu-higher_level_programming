@@ -4,4 +4,4 @@ def number_keys(a_dictionary):
     for key, value in a_dictionary.items():
         sum_keys += 1
 
-        return int(sum_keys)
+    return int(sum_keys)
