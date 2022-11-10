@@ -6,7 +6,7 @@ class Rectangle:
     """String representation.........................."""
 
     def __init__(self, width=0, height=0):
-        """a new Rectangle
+        """Initialize .
         Args:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
