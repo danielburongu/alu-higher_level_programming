@@ -3,7 +3,6 @@
 
 
 
-
 class Rectangle:
     """showing a rectangle."""
 
