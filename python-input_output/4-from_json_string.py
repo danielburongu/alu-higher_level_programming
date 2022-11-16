@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' a funtion that returns an object (Python data structure) represented by a JSON string:'''
+'''funtion returns an object (Python data structure) represented by a JSON string:'''
 
 
 import json
