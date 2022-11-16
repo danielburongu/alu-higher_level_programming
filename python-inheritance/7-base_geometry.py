@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-'''Public instance method: def area(self):'''
+'''A Public Instance method: def area(self):'''
 
 
 class BaseGeometry:
     '''Base class'''
 
     def area(self):
-        '''raise an exception for now'''
+        '''Raise an Exception for Now'''
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
