@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""It Inherits BaseGeometry class"""
+"""Inherits BaseGeometry class"""
 
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
@@ -22,3 +22,4 @@ class Square(Rectangle):
     def __str__(self):
         '''Returns [Square] '''
         return str("[Square] {}/{}".format(self.__size, self.__size))
+    
