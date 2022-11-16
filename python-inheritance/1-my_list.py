@@ -6,7 +6,7 @@ class MyList(list):
     '''This Class inherits function list'''
 
     def print_sorted(self):
-        '''Prints the list in a sorted manner  '''
+        '''Prints the list In a soRted Manner  '''
         sorted_list = self[:]
         sorted_list.sort()
         print("{}".format(sorted_list))

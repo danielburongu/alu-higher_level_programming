@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Object is an exact instance of the specified class '''
+''' Object is An Exact Instance 0f the Specified Class '''
 
 
 def is_same_class(obj, a_class):
