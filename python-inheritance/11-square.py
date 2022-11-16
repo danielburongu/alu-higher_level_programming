@@ -1,24 +1,17 @@
 #!/usr/bin/python3
-'''Class Rectangle that inherits from BaseGeometry (7-base_geometry.py)'''
+"""Inherit from RQECTANGle"""
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+class Square(Rectangle):
+    """Initialize the subclass"""
+    def __init__(self, size):
+        """call the integer validator method"""
+        self.integer_validator("size", size)
+        """call the parent class methods and attributes"""
+        super().__init__(size, size)
+        self.__size = size
 
-
-class Rectangle(BaseGeometry):
-    '''Rectangle class that inherits the BaseGeometry '''
-
-    def __init__(self, width, height):
-        '''A function that created a rectangle '''
-        self.integer_validator('width', width)
-        self.__width = width
-        self.integer_validator('height', height)
-        self.__height = height
-
-    def area(self):
-        '''Function to return the area of the rectangle'''
-        return self.__height * self.__width
-
+    """Create the user string represantation"""
     def __str__(self):
-        '''Returns [Rectangle] '''
-        return str("[Rectangle] {}/{}".format(self.__width, self.__height))
+        return str("[Square] {}/{}".format(self.__size, self.__size))
