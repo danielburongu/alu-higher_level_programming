@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""send letter"""
+"""script that sends a letter"""
 import requests
 import sys
 
@@ -8,13 +8,13 @@ if __name__ == '__main__':
         lett = sys.argv[1]
     except IndexError:
         lett = ""
-    response = requests.post(
+    reply = requests.post(
         "http://0.0.0.0:5000/search_user",
         data={"q": lett}
     )
     try:
-        json_response = response.json()
-        if response.headers.get("Content-Type") == 'application/json':
+        json_response = reply.json()
+        if reply.headers.get("Content-Type") == 'application/json':
             if len(json_response) > 0:
                 print("[{}] {}".format(
                     json_response["id"],
