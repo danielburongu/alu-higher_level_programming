@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""take a url and display the values"""
+"""takes url and display the body of the response"""
 
 
 import requests
@@ -7,11 +7,11 @@ import sys
 
 
 if __name__ == "__main__":
-    """send the email"""
+    """sending the variable email"""
     url = sys.argv[1]
     email = sys.argv[2]
     context = {
         "email": email
     }
-    response = requests.post(url, data=context)
-    print("{}".format(response.text))
+    reply = requests.post(url, data=context)
+    print("{}".format(reply.text))
