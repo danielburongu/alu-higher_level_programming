@@ -1,2 +1,3 @@
--- a script that lists all records
-SELECT score, COUNT(score) AS number FROM second_table GROUP BY score ORDER BY score DESC;
+-- list all record in the database table 
+SELECT score, name FROM second_table
+WHERE name IS NOT NULL ORDER BY score DESC;
