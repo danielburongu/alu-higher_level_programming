@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""take a url and display the values"""
+"""sends a request to the url and displays value in response header"""
 
 
 import requests
@@ -7,7 +7,7 @@ import sys
 
 
 if __name__ == "__main__":
-    """display the contents"""
+    """shows value of variable"""
     url = sys.argv[1]
-    response = requests.get(url)
-    print("{}".format(response.headers.get('X-Request-Id')))
+    reply = requests.get(url)
+    print("{}".format(reply.headers.get('X-Request-Id')))
