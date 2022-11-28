@@ -1,30 +1,30 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
->>> say_my_name("John", "Malkovich")
-My name is John Malkovich
+>>> say_my_name("Daniel", "Burongu")
+My name is Daniel Burongu
 
->>> say_my_name("Snow", "White and the 7 drawves")
-My name is Snow White and the 7 drawves
+>>> say_my_name("Joseph", "Rukundo and the 9 Ikaze")
+My name is Joseph Rukundo and the 9 Ikaze
 
->>> say_my_name("HHarry")
-My name is HHarry 
+>>> say_my_name("SSozzi")
+My name is SSozzi 
 
->>> say_my_name("BÒb")
-My name is BÒb 
+>>> say_my_name("Rollins")
+My name is Rollins 
 
->>> say_my_name("Blueberry Muffin")
-My name is Blueberry Muffin 
+>>> say_my_name("Inyange Juice")
+My name is Inyange Juice 
 
 """
 Error
 """
 
->>> say_my_name("Gong", 123)
+>>> say_my_name("Chan", 123)
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
 
->>> say_my_name(123, "Beverly")
+>>> say_my_name(123, "Beautiy")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
@@ -34,7 +34,7 @@ Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
 
->>> say_my_name(["Tian", "Chen"])
+>>> say_my_name(["Tiba", "Chil"])
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
@@ -49,7 +49,7 @@ Traceback (most recent call last):
 ...
 TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
->>> say_my_name("Diana", "Harry", "William")
+>>> say_my_name("Diana", "Walter", "Wilson")
 Traceback (most recent call last):
 ...
 TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
@@ -69,22 +69,22 @@ Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
 
->>> say_my_name("Mitali", 2)
+>>> say_my_name("Mica", 2)
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
 
->>> say_my_name(1, "Arnaud")
+>>> say_my_name(1, "Arsene")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
 
->>> say_my_name("Sengupta", (2, 3))
+>>> say_my_name("Sentogo", (2, 3))
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
 
->>> say_my_name((1, 2), "Batman")
+>>> say_my_name((1, 2), "Badboy")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
