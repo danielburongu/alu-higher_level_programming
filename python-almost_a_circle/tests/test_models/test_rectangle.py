@@ -49,9 +49,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
     def test_00_documentation(self):
-        """
-        Test to see if documentation is created and correct
-        """
+        """Test to see if documentation is created and correct"""
         self.assertTrue(hasattr(Rectangle, "__init__"))
         self.assertTrue(Rectangle.__init__.__doc__)
         self.assertTrue(hasattr(Rectangle, "width"))
