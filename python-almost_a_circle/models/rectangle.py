@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
-This module contains a class Rectangle
+class Rectangle
 with all its methods and attributes
-definition
+defined
 """
 from models.base import Base
 
 
 class Rectangle(Base):
     """
-    This is the class Rectangle containing private instance
+    Rectangle containing private instance
     attributes __width,  __height, __x and __y a class constructor
     """
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -25,14 +25,14 @@ class Rectangle(Base):
     @property
     def width(self):
         """
-        returns the width
+        displays the width
         """
         return (self.__width)
 
     @width.setter
     def width(self, value):
         """
-        setter validates value is an integer > 0
+        validating value is an integer
         receives value as param
         """
         if type(value) is not int:
@@ -44,14 +44,14 @@ class Rectangle(Base):
     @property
     def height(self):
         """
-        return the height
+        displays the height
         """
         return (self.__height)
 
     @height.setter
     def height(self, value):
         """
-        setter validates value is an integer > 0
+        setter validates value is an integer 
         receives value as param
         """
         if type(value) is not int:
@@ -63,14 +63,14 @@ class Rectangle(Base):
     @property
     def x(self):
         """
-        returns the x
+        displays  x
         """
         return (self.__x)
 
     @x.setter
     def x(self, value):
         """
-        setter validates value is an integer > 0
+        validates value an integer
         receives value as param
         """
         if type(value) is not int:
@@ -89,7 +89,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """
-        setter validates value is an integer > 0
+        validates value as an integer
         receives value as param
         """
         if type(value) is not int:
@@ -100,14 +100,14 @@ class Rectangle(Base):
 
     def area(self):
         """
-        this function returns the area value of the
+        this function displays the area value of the
         rectangle
         """
         return (self.__width * self.__height)
 
     def display(self):
         """
-        This function prints in stdout the rectangle
+        prints in stdout the rectangle
         """
         print(("\n" * self.__y) + "\n".join(((" " * self.__x) +
                                              ("#" * self.__width))
@@ -115,7 +115,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        This function returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        This returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
         return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
                 format(self.id, self.__x, self.__y, self.__width,
@@ -123,7 +123,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        function assigns an argument to each attribute
+        this assigns an argument to each attribute
         """
         if len(args):
             for i, j in enumerate(args):
@@ -151,7 +151,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """
-        This function returns the dictionary representation
+        the dictionary representation
         of a rectangle
         """
         dict = {}

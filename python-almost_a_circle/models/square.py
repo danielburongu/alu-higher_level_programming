@@ -1,24 +1,24 @@
 #!/usr/bin/python3
 """
-This module contains the class Square
+contains the class Square
 """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
     """
-    This class contains instantiation of the class
+    instantiation of the class
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
-        This function is the instantiation of the
+        instantiation of the
         square class
         """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """
-        returns string representation of square
+        representation of square
         """
         return ("[Square] ({}) {:d}/{:d} - {:d}".format
                 (self.id, self.x, self.y, self.width))
@@ -26,21 +26,21 @@ class Square(Rectangle):
     @property
     def size(self):
         """
-        This function returns the size (width)
+        returns the size (width)
         """
         return (self.width)
 
     @size.setter
     def size(self, value):
         """
-        This function sets the size (width and height)
+        sets the size (width and height)
         """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
         """
-        This function assigns values and attributes
+        values and attributes
         """
         if len(args):
             for i, j in enumerate(args):
@@ -64,7 +64,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """
-        This function contains the dictionary representation
+        This is a dictionary representation
         of the square
         """
         sq = {}

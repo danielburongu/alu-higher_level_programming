@@ -9,33 +9,33 @@ from io import StringIO
 import json
 import os
 """
-This module contains all unittest cases for
-Base class
+containing all unittest cases for
+Base class tests
 """
 
 
 class TestBase(unittest.TestCase):
     """
-    Class containing functions to run
+    Class running all the
     multiple tests
     """
     def setUp(self):
         """
-        function to redirect stdout to check
-        outpute of functions relying on print
+        redirecting to check
+        output of functions on the print
         """
         sys.stdout = StringIO()
 
     def tearDown(self):
         """
-        cleans everything up after running
+        clearing things up after running
         setup
         """
         sys.stdout = sys.__stdout__
 
     def test_pep8_model(self):
         """
-        Tests for pep8
+        Testings for pep8
         """
         p8 = pep8.StyleGuide(quiet=True)
         p = p8.check_files(['models/base.py'])
@@ -43,19 +43,19 @@ class TestBase(unittest.TestCase):
 
     def test_pep8_test(self):
         """
-        Tests for pep8
+        Testings for pep8
         """
         p8 = pep8.StyleGuide(quiet=True)
         p = p8.check_files(['tests/test_models/test_base.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
     def test_docstring(self):
-        """test if docstring"""
+        """checking docstring"""
         self.assertIsNotNone(Base.__doc__)
 
     def test_00_documentation(self):
         """
-        Test to see if documentation is
+        checking whether documentation is
         created and correct
         """
         self.assertTrue(hasattr(Base, "__init__"))
@@ -73,7 +73,7 @@ class TestBase(unittest.TestCase):
 
     def test_0_id(self):
         """
-        Test to check for id method
+        checking for id methods
         """
         Base._Base__nb_objects = 0
         b1 = Base()
@@ -89,7 +89,7 @@ class TestBase(unittest.TestCase):
 
     def test_1_id(self):
         """
-        After run set of ids
+        running set of ids
         """
         Base._Base__nb_objects = 0
         bas = Base()
@@ -97,7 +97,7 @@ class TestBase(unittest.TestCase):
 
     def test_2_id(self):
         """
-        Random arguments passed to check
+        Randomly passed to check
         """
         Base._Base__nb_objects = 0
         t1 = Base(22)
@@ -109,7 +109,7 @@ class TestBase(unittest.TestCase):
 
     def test_3_set_nb(self):
         """
-        setting nb_objects as private
+        setting test as private
         """
         b = Base(33)
         with self.assertRaises(AttributeError):
@@ -119,7 +119,7 @@ class TestBase(unittest.TestCase):
 
     def test_4_dict(self):
         """
-        Test to check if dictionary
+        checking wether dictionary
         is working
         """
         r1 = Rectangle(10, 7, 2, 8, 1)
@@ -132,7 +132,7 @@ class TestBase(unittest.TestCase):
 
     def test_5_to_json_string(self):
         """
-        Test to check for string to
+        checking for string to
         json conversion
         """
         Base.__nb_objects = 0
@@ -149,8 +149,8 @@ class TestBase(unittest.TestCase):
 
     def test_6_from_json_string(self):
         """
-        Test to check from json to string
-        conversion
+        checking from json to string
+        conversion possibilities
         """
         s = '[{"id": 9, "width": 10, "height": 11, "x": 12, "y": 13}, \
 {"id": 10, "width": 12, "height": 14, "x": 16, "y": 18}]'
@@ -160,21 +160,21 @@ class TestBase(unittest.TestCase):
 
     def test_7_from_json_string_empty(self):
         """
-        Test to check if it works with
+        checking
         empty string or none
         """
         self.assertEqual(Base.from_json_string(""), [])
         self.assertEqual(Base.from_json_string(None), [])
 
     def test_8_jfile_empty(self):
-        """Test to check from empty"""
+        """checking from an side empty"""
         Rectangle.save_to_file([])
         with open("Rectangle.json", mode="r") as myFile:
             self.assertEqual([], json.load(myFile))
 
     def test_9_jfile_None(self):
         """
-        Test to check from none empty
+        checking from none empty
         """
         Rectangle.save_to_file(None)
         with open("Rectangle.json", mode="r") as myFile:
@@ -182,7 +182,7 @@ class TestBase(unittest.TestCase):
 
     def test_10_rect(self):
         """
-        Test to check for rectangle creation
+        checking for rectangle creation
         """
         R1 = Rectangle(4, 5, 6)
         R1_dict = R1.to_dictionary()
@@ -191,7 +191,7 @@ class TestBase(unittest.TestCase):
 
     def test_11_sq(self):
         """
-        Test to check for square creation
+        checking for square
         """
         S1 = Square(44, 55, 66, 77)
         S1_dict = S1.to_dictionary()
@@ -200,7 +200,7 @@ class TestBase(unittest.TestCase):
 
     def test_12_file_rect(self):
         """
-        Test to check if file loads from rect
+        checking if file loads from rect
         """
         R1 = Rectangle(33, 34, 35, 26)
         R2 = Rectangle(202, 2)
@@ -211,7 +211,7 @@ class TestBase(unittest.TestCase):
 
     def test_13_file_square(self):
         """
-        Test to check if file loads from square
+        checking if file loads from square
         """
         S1 = Square(22)
         S2 = Square(44, 44, 55, 66)
@@ -222,7 +222,7 @@ class TestBase(unittest.TestCase):
 
     def test_14_csv_file(self):
         """
-        Test to check for csv file
+        checking for csv file
         """
         R1 = Rectangle(12, 13, 14, 15)
         R2 = Rectangle(3, 5)
@@ -234,7 +234,7 @@ class TestBase(unittest.TestCase):
 
     def test_15_csv_save_file(self):
         """
-        Test to check for csv file with None and empty
+        csv file with None and empty
         """
         Rectangle.save_to_file_csv(None)
         self.assertEqual(Rectangle.load_from_file_csv(), [])

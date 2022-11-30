@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-This modules contains a class Base
+class Base
 with all its methods and attributes
-definition
+defined
 """
 import json
 import csv
@@ -12,14 +12,14 @@ from random import choice as random
 
 class Base:
     """
-    This class has a private attribute __nb_objects = 0
-    a class constructor definition to check for id
+    class has a private attribute 
+    class constructor to check for id
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
         """
-        Instantiation of class which checks for id
+        class which checks for id
         """
         if id is not None:
             self.id = id
@@ -30,7 +30,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        This functions returns the json string representation
+        This is json string representation
         of list_dictionaries
         """
         if list_dictionaries is None:
@@ -40,7 +40,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        This function writes the json
+        the json
         string representation of list_objs
         to a file
         """
@@ -55,7 +55,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """
-        This function returns the list
+        the list
         of the json string represenation
         """
         if json_string is None or len(json_string) == 0:
@@ -65,8 +65,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        This function returns an instance
-        with all attributes already set
+        instance comprised of
+        all attributes already set
         """
         if cls.__name__ is "Rectangle":
             temp = cls(1, 1)
@@ -78,7 +78,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        This function returns a list
+        This shows a list
         of instances
         """
         fn = cls.__name__ + ".json"
@@ -95,7 +95,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
-        This function serializes in csv
+        This serializes in csv
         """
         fn = cls.__name__ + ".csv"
         if fn == "Rectangle.csv":
@@ -115,7 +115,7 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """
-        This function deserializes from csv
+        This deserializes from csv
         """
         try:
             fn = cls.__name__ + ".csv"
