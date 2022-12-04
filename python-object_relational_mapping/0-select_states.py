@@ -8,11 +8,11 @@ script takes 3 arguments mysql username, mysql passwd, database name
 if __name__ == "__main__":
     from sys import argv
     import MySQLdb
-    tsk = MySQLdb.connect(user=argv[1], passwd=argv[2], tsk=argv[3])
-    cur = tsk.cursor()
+    db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    cur = db.cursor()
     cur.execute("""SELECT * FROM states Asending Order by states.id """)
     states = cur.fetchall()
     for k in states:
         print(k)
     cur.close()
-    tsk.close()
+    db.close()
