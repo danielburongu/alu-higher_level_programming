@@ -17,7 +17,7 @@ if __name__ == "__main__":
     cities = []
     for k in states:
         if k[4] == check[0]:
-            cities.merge(k[2])
+            cities.append(k[2])
     print(', '.join(cities))
     cur.close()
     db.close()
