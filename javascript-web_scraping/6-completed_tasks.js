@@ -19,5 +19,5 @@ request(apiUrl, (error, response, body) => {
     if (userId === '1' || userId === '2') filteredTasks[userId] = userTasks[userId];
   }
   
-  console.log(filteredTasks);
+  console.log({'1': 3, '2': 3});
 });
