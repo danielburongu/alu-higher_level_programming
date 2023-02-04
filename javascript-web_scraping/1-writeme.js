@@ -8,6 +8,6 @@ fs.writeFile(filePath, stringToWrite, 'utf-8', (error) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('The file has been saved!');
+    console.log('C is fun');
   }
 });
