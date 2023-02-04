@@ -14,7 +14,10 @@ request(apiUrl, (error, response, body) => {
     userTasks[task.userId]++;
   });
   
+  const filteredTasks = {};
   for (const userId in userTasks) {
-    console.log(`User ${userId} completed ${userTasks[userId]} tasks`);
+    if (userId === '1' || userId === '2') filteredTasks[userId] = userTasks[userId];
   }
+  
+  console.log(filteredTasks);
 });
